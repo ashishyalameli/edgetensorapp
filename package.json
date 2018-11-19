@@ -2,9 +2,8 @@
   "name": "edgetensorapp",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "ng build --aot -prod",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
