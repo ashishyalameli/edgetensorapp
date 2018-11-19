@@ -1,21 +1,56 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<style>
+  
+.cardd{
+
+/*box-shadow: 1px 1px 3px #888;*/
+height: 6rem;
+width: 50%;
+padding-left: 1px ;
+padding-right: 5px ;
+padding-bottom: 0.5px;
+padding-top: 0.5px;
+margin: 10px;
+}
+</style>
+<div style="text-align:center;font-size:21px;">
   <h1>
-    Welcome to {{ title }}!
+    <b style="color: red;">{{ title }}!</b>
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div>
+  <p style="text-align:center;">
+    <b>Select the time stamps to fetch the snapshots.</b>
+  </p>
+</div>
+
+<div style="text-align:center;vertical-align:middle;margin-top:4rem">
+  <label><b>From:</b>&nbsp;
+    <input type="datetime-local" #fromdt style="text-align:center;border-top-left-radius:7px;border-bottom-right-radius:7px;height:31px;background-color:rgb(253, 123, 123);border:transparent;font-size:16px;" />
+  </label>
+  <label>&nbsp;&nbsp;&nbsp;<b>To:</b>&nbsp;
+    <input type="datetime-local" #todt style="text-align:center;border-top-left-radius:7px;border-bottom-right-radius:7px;height:31px;background-color:rgb(253, 123, 123);border:transparent;font-size:16px;" />
+  </label>&nbsp;&nbsp;&nbsp;
+  <input type="button" (click)="getImages(fromdt.value,todt.value)" value="Show" style="border-radius:7px;background-color:red;border:transparent;color:black;width:4%;height:31px;font-size:16px;">
+
+</div>
+
+<hr style="margin-top:4em;margin-left:3em;margin-right:3em;height:4px;background-color:rgb(253, 123, 123);border-color:rgb(253, 123, 123);border-radius:7px">
+
+<!--<div [innerHTML]="imgdata"></div>--><div style="display:none;">
+<input type="text" #name value="{{ reta.length }}"></div>
+<div *ngIf="name.value!=0">
+  <div *ngFor="let iobj of reta" style="margin-top:4em;margin-left:6em;margin-right:6em;align-content:center;text-align:center;">
+    <div style="height: 6rem;">
+      <img [src]="iobj.link" style="height:97px;width:97px"><br />
+      <p *ngIf="iobj.flag==0">Color Image!</p><p *ngIf="iobj.flag==1">Grayscale Image!</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="name.value==0" style="text-align:center;">
+  There are no images for now!
+</div>
 
 <router-outlet></router-outlet>
