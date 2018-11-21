@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Project details:
+
+This just an example to access a .json file from AWS S3 bucket which has links to some images and a flag to indicate that they are colored or gray scaled. The object is filter using from and to timestamps and used to display the images.
+
+The project tells how to connect your angular with AWS S3.
+And how to use some angular directives correctly.
