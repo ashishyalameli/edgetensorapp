@@ -26,9 +26,9 @@ export class  AppComponent implements OnInit{
    
    bucket = new S3(
     {
-      accessKeyId: 'AKIAJ33MMDUPZIDAVPQQ',
-      secretAccessKey: 'mYzcOugHnoLRY54w/id9ZdCdzA2sxhXT9VZBU88x',
-      region: 'ap-south-1'
+      accessKeyId: 'YOUR_ACCESS_KEY_ID',
+      secretAccessKey: 'YOUR_SECRETE_KEY',
+      region: 'YOUR_REGION'
     }
   );
 
@@ -57,8 +57,6 @@ export class  AppComponent implements OnInit{
       console.log(data);
       var decodedString = String.fromCharCode.apply(null, new Uint8Array(data.Body));
       var obj = JSON.parse(decodedString);
-
-    //https://s3.ap-south-1.amazonaws.com/edgeimages/jsonobj/data_json.json
   
       var date = fromdt.split('T')[0] + ' ';
       var fromA = fromdt.split('T')[1].split(':');
@@ -110,7 +108,7 @@ export class  AppComponent implements OnInit{
   //OnInit() {
     // Set up credentials
     // AWS.config.update =  new aws.Credentials({
-    //   accessKeyId: 'AKIAJMIESNF6JRTTQXGA', secretAccessKey: 'LiWjrLV628QTC7CA+gVYUh61ZMXwZvYwSADhVN4n'
+    //   accessKeyId: 'YOUR_ACCESS_KEY_ID', secretAccessKey: 'YOUR_SECRETE_KEY'
     // });
 
     // let s3 = new AWS.S3();
@@ -132,7 +130,7 @@ export class  AppComponent implements OnInit{
     this.image = (<HTMLImageElement>source).src
   } */
 
-  /*AWS.config.update({accessKeyId: 'AKIAJMIESNF6JRTTQXGA', secretAccessKey: 'LiWjrLV628QTC7CA+gVYUh61ZMXwZvYwSADhVN4n'});
+  /*AWS.config.update({accessKeyId: 'YOUR_ACCESS_KEY_ID', secretAccessKey: 'YOUR_SECRETE_KEY;
   var s3 = new AWS.S3({maxRetries: 7});
   console.log('S3 configured');
   s3.listObjects({Bucket: 'edgetensor', Prefix: 'jsonobj'});*/
